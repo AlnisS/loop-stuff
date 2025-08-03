@@ -37,7 +37,7 @@ func _physics_process(delta):
 			dloop.z1 = hovered_tile.position.z
 			dloop.z2 = hovered_tile.position.z
 			dloop.color = 0  # gray
-			dloop.position = Vector3(0.02, 0.1, 0.02)
+			dloop.position = Vector3(0.002, 0.01, 0.002)
 			level.get_node("Loops").add_child(dloop)
 		if !is_drawing_loop:
 			dloop.x1 = hovered_tile.position.x

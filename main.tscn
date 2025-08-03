@@ -177,6 +177,13 @@ text = "0"
 font_size = 128
 outline_size = 32
 
+[node name="Name" type="Label3D" parent="Levels/Level1"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.5, -0.9, 3.5)
+pixel_size = 0.008
+text = "L1"
+font_size = 128
+outline_size = 32
+
 [node name="Next" type="Label3D" parent="Levels/Level1"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 3, -0.9, 0)
 pixel_size = 0.01
@@ -323,6 +330,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 3)
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -0.9, -3.5)
 pixel_size = 0.008
 text = "0"
+font_size = 128
+outline_size = 32
+
+[node name="Name" type="Label3D" parent="Levels/Level2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -0.9, 4.5)
+pixel_size = 0.008
+text = "L2"
 font_size = 128
 outline_size = 32
 
