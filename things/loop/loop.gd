@@ -1,3 +1,4 @@
+@tool
 extends Node3D
 
 enum LoopColor {
@@ -13,12 +14,27 @@ enum LoopColor {
 	PURPLE,
 }
 
-@export var color := LoopColor.GRAY
+@export var color := LoopColor.GRAY:
+	set(value):
+		color = value
+		recolor()
 
-@export var x1 := -2.0
-@export var z1 := -3.0
-@export var x2 := 2.0
-@export var z2 := 3.0
+@export var x1 := -2.0:
+	set(value):
+		x1 = value
+		rebuild()
+@export var z1 := -3.0:
+	set(value):
+		z1 = value
+		rebuild()
+@export var x2 := 2.0:
+	set(value):
+		x2 = value
+		rebuild()
+@export var z2 := 3.0:
+	set(value):
+		z2 = value
+		rebuild()
 
 
 @onready var corner_1: MeshInstance3D = %Corner1
@@ -30,11 +46,18 @@ enum LoopColor {
 @onready var corner_4: MeshInstance3D = %Corner4
 @onready var segment_4: MeshInstance3D = %Segment4
 
-func _process(_delta: float) -> void:
+func _ready() -> void:
+	#pass
 	rebuild()
 	recolor()
 
+#func _process(_delta: float) -> void:
+	#rebuild()
+	#recolor()
+
 func rebuild():
+	if not is_inside_tree():
+		return;
 	corner_1.position.x = x1
 	corner_1.position.z = z1
 	
@@ -64,6 +87,8 @@ func rebuild():
 	segment_4.scale.x = (x2 - x1) - 1.0
 
 func recolor():
+	if not is_inside_tree():
+		return;
 	var c = Color(0, 0, 0)
 	match color:
 		LoopColor.GRAY:
