@@ -96,6 +96,14 @@ func is_dloop_valid() -> bool:
 		return false
 	if abs(dloop.z1 - dloop.z2) < 0.9:
 		return false
+	for point in dloop.get_points():
+		var point_ok = false
+		for tile in level.get_node("Tiles").get_children():
+			if is_equal_approx(point.x, tile.position.x) and is_equal_approx(point.z, tile.position.z):
+				point_ok = true
+				break
+		if not point_ok:
+			return false
 	return true
 
 func remove_overlapping_loops():
