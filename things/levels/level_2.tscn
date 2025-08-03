@@ -1,0 +1,177 @@
+[gd_scene load_steps=3 format=3 uid="uid://d4mnrda36dmij"]
+
+[ext_resource type="PackedScene" uid="uid://cvnklfqi587f2" path="res://things/tile/tile.tscn" id="1_8lpjp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h2yge"]
+size = Vector3(1.67993, 0.159912, 1.38965)
+
+[node name="Level2" type="Node3D"]
+
+[node name="Loops" type="Node3D" parent="."]
+
+[node name="Tiles" type="Node3D" parent="."]
+
+[node name="Tile1" parent="Tiles" instance=ExtResource("1_8lpjp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -2)
+
+[node name="Tile2" parent="Tiles" instance=ExtResource("1_8lpjp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -2)
+
+[node name="Tile3" parent="Tiles" instance=ExtResource("1_8lpjp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+
+[node name="Tile4" parent="Tiles" instance=ExtResource("1_8lpjp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -2)
+
+[node name="Tile5" parent="Tiles" instance=ExtResource("1_8lpjp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -2)
+
+[node name="Tile6" parent="Tiles" instance=ExtResource("1_8lpjp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -1)
+
+[node name="Tile7" parent="Tiles" instance=ExtResource("1_8lpjp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -1)
+
+[node name="Tile8" parent="Tiles" instance=ExtResource("1_8lpjp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+
+[node name="Tile9" parent="Tiles" instance=ExtResource("1_8lpjp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1)
+
+[node name="Tile10" parent="Tiles" instance=ExtResource("1_8lpjp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -1)
+
+[node name="Tile11" parent="Tiles" instance=ExtResource("1_8lpjp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+
+[node name="Tile12" parent="Tiles" instance=ExtResource("1_8lpjp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="Tile13" parent="Tiles" instance=ExtResource("1_8lpjp")]
+
+[node name="Tile14" parent="Tiles" instance=ExtResource("1_8lpjp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="Tile15" parent="Tiles" instance=ExtResource("1_8lpjp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+
+[node name="Tile16" parent="Tiles" instance=ExtResource("1_8lpjp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 1)
+
+[node name="Tile17" parent="Tiles" instance=ExtResource("1_8lpjp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 1)
+
+[node name="Tile18" parent="Tiles" instance=ExtResource("1_8lpjp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+
+[node name="Tile19" parent="Tiles" instance=ExtResource("1_8lpjp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
+
+[node name="Tile20" parent="Tiles" instance=ExtResource("1_8lpjp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 1)
+
+[node name="Tile21" parent="Tiles" instance=ExtResource("1_8lpjp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 2)
+
+[node name="Tile22" parent="Tiles" instance=ExtResource("1_8lpjp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 2)
+
+[node name="Tile23" parent="Tiles" instance=ExtResource("1_8lpjp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="Tile24" parent="Tiles" instance=ExtResource("1_8lpjp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 2)
+
+[node name="Tile25" parent="Tiles" instance=ExtResource("1_8lpjp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
+
+[node name="Tile26" parent="Tiles" instance=ExtResource("1_8lpjp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 3)
+
+[node name="Tile27" parent="Tiles" instance=ExtResource("1_8lpjp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 3)
+
+[node name="Tile28" parent="Tiles" instance=ExtResource("1_8lpjp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+
+[node name="Tile29" parent="Tiles" instance=ExtResource("1_8lpjp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 3)
+
+[node name="Tile30" parent="Tiles" instance=ExtResource("1_8lpjp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 3)
+
+[node name="Tile31" parent="Tiles" instance=ExtResource("1_8lpjp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 2)
+
+[node name="Tile32" parent="Tiles" instance=ExtResource("1_8lpjp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 2)
+
+[node name="Tile33" parent="Tiles" instance=ExtResource("1_8lpjp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="Tile34" parent="Tiles" instance=ExtResource("1_8lpjp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 2)
+
+[node name="Tile35" parent="Tiles" instance=ExtResource("1_8lpjp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
+
+[node name="Tile36" parent="Tiles" instance=ExtResource("1_8lpjp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 3)
+
+[node name="Tile37" parent="Tiles" instance=ExtResource("1_8lpjp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 3)
+
+[node name="Tile38" parent="Tiles" instance=ExtResource("1_8lpjp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+
+[node name="Tile39" parent="Tiles" instance=ExtResource("1_8lpjp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 3)
+
+[node name="Tile40" parent="Tiles" instance=ExtResource("1_8lpjp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 3)
+
+[node name="Score" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -0.9, -3.5)
+pixel_size = 0.008
+text = "0"
+font_size = 128
+outline_size = 32
+
+[node name="Name" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -0.9, 4.5)
+pixel_size = 0.008
+text = "L2"
+font_size = 128
+outline_size = 32
+
+[node name="Back" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4, -0.9, 0)
+pixel_size = 0.01
+text = "«"
+font_size = 256
+outline_size = 32
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Back"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Back/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.318359)
+shape = SubResource("BoxShape3D_h2yge")
+
+[node name="Next" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 4, -0.9, 0)
+pixel_size = 0.01
+text = "»"
+font_size = 256
+outline_size = 32
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Next"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Next/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.318359)
+shape = SubResource("BoxShape3D_h2yge")

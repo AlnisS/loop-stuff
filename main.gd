@@ -81,7 +81,7 @@ func _physics_process(delta):
 			next_button = node
 			break
 	
-	if remaining_tiles == 0:
+	if remaining_tiles == 0 or true:
 		next_button.show()
 		if Input.is_action_just_pressed("click"):
 			if hovered_button == "Next":
