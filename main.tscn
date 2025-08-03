@@ -1,13 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://ci8rlwsvwwqlr"]
+[gd_scene load_steps=5 format=3 uid="uid://ci8rlwsvwwqlr"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7dm0k"]
-albedo_color = Color(0.1224, 0.68, 0.131693, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_7dm0k"]
-size = Vector3(5, 1, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_ig7tw"]
-size = Vector3(5, 1, 1)
+[ext_resource type="PackedScene" uid="uid://cqqnepvrcxkr5" path="res://things/loop/loop.tscn" id="1_ig7tw"]
 
 [sub_resource type="Environment" id="Environment_ig7tw"]
 ambient_light_source = 2
@@ -27,32 +20,6 @@ projection = 1
 size = 16.0
 far = 50.0
 
-[node name="Loop" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Loop"]
-material_override = SubResource("StandardMaterial3D_7dm0k")
-mesh = SubResource("BoxMesh_7dm0k")
-skeleton = NodePath("../..")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Loop"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
-material_override = SubResource("StandardMaterial3D_7dm0k")
-mesh = SubResource("BoxMesh_7dm0k")
-skeleton = NodePath("../..")
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="Loop"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2, 0, -3)
-material_override = SubResource("StandardMaterial3D_7dm0k")
-mesh = SubResource("BoxMesh_ig7tw")
-skeleton = NodePath("../..")
-
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="Loop"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2, 0, -3)
-material_override = SubResource("StandardMaterial3D_7dm0k")
-mesh = SubResource("BoxMesh_ig7tw")
-skeleton = NodePath("../..")
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ig7tw")
 
@@ -65,3 +32,20 @@ mesh = SubResource("PlaneMesh_7dm0k")
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 light_energy = 0.5
 shadow_enabled = true
+
+[node name="Loop" parent="." instance=ExtResource("1_ig7tw")]
+color = 7
+x2 = 3.0
+
+[node name="Loop2" parent="." instance=ExtResource("1_ig7tw")]
+color = 8
+x1 = -1.0
+z1 = -2.0
+z2 = 2.0
+
+[node name="Loop3" parent="." instance=ExtResource("1_ig7tw")]
+color = 9
+x1 = 0.0
+z1 = -1.0
+x2 = 1.0
+z2 = 1.0

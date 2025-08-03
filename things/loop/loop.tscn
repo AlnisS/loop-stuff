@@ -1,0 +1,57 @@
+[gd_scene load_steps=5 format=3 uid="uid://cqqnepvrcxkr5"]
+
+[ext_resource type="Script" uid="uid://c8p17263tntn3" path="res://things/loop/loop.gd" id="1_vyk26"]
+[ext_resource type="Material" uid="uid://fhl7w40uoqnh" path="res://things/loop/loop_material.tres" id="2_qm6xt"]
+[ext_resource type="ArrayMesh" uid="uid://duxn3s282k3eo" path="res://things/loop/data/corner.obj" id="3_sak7x"]
+[ext_resource type="ArrayMesh" uid="uid://be6jehj6ody2k" path="res://things/loop/data/segment.obj" id="4_ceunk"]
+
+[node name="Loop" type="Node3D"]
+script = ExtResource("1_vyk26")
+
+[node name="Corner1" type="MeshInstance3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1, 0, -1)
+material_override = ExtResource("2_qm6xt")
+mesh = ExtResource("3_sak7x")
+
+[node name="Segment1" type="MeshInstance3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1, 0, 0)
+material_override = ExtResource("2_qm6xt")
+mesh = ExtResource("4_ceunk")
+
+[node name="Corner2" type="MeshInstance3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 1)
+material_override = ExtResource("2_qm6xt")
+mesh = ExtResource("3_sak7x")
+
+[node name="Segment2" type="MeshInstance3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+material_override = ExtResource("2_qm6xt")
+mesh = ExtResource("4_ceunk")
+
+[node name="Corner3" type="MeshInstance3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 1, 0, 1)
+material_override = ExtResource("2_qm6xt")
+mesh = ExtResource("3_sak7x")
+
+[node name="Segment3" type="MeshInstance3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1, 0, 0)
+material_override = ExtResource("2_qm6xt")
+mesh = ExtResource("4_ceunk")
+
+[node name="Corner4" type="MeshInstance3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 1, 0, -1)
+material_override = ExtResource("2_qm6xt")
+mesh = ExtResource("3_sak7x")
+
+[node name="Segment4" type="MeshInstance3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+material_override = ExtResource("2_qm6xt")
+mesh = ExtResource("4_ceunk")
