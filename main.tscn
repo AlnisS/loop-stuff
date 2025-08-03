@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ci8rlwsvwwqlr"]
+[gd_scene load_steps=14 format=3 uid="uid://ci8rlwsvwwqlr"]
 
 [ext_resource type="Script" uid="uid://iycjnte2pm11" path="res://main.gd" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://cqqnepvrcxkr5" path="res://things/loop/loop.tscn" id="1_ig7tw"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://bpai4kbggsttt" path="res://things/levels/level_3.tscn" id="5_lquwl"]
 [ext_resource type="PackedScene" uid="uid://dlls5eltv1om8" path="res://things/levels/level_4.tscn" id="6_7mycd"]
 [ext_resource type="PackedScene" uid="uid://wbl24b8xtihi" path="res://things/levels/level_5.tscn" id="7_272bh"]
+[ext_resource type="PackedScene" uid="uid://chiaq0kohso2q" path="res://things/levels/level_6.tscn" id="8_5vw27"]
+[ext_resource type="PackedScene" uid="uid://6afx4iavgpbj" path="res://things/levels/level_7.tscn" id="9_kek77"]
 
 [sub_resource type="Environment" id="Environment_ig7tw"]
 ambient_light_source = 2
@@ -215,3 +217,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 0, 0)
 
 [node name="Level5" parent="Levels" instance=ExtResource("7_272bh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 100, 0, 0)
+
+[node name="Level6" parent="Levels" instance=ExtResource("8_5vw27")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 125, 0, 0)
+
+[node name="Level7" parent="Levels" instance=ExtResource("9_kek77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 150, 0, 0)
