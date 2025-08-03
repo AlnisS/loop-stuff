@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://ci8rlwsvwwqlr"]
+[gd_scene load_steps=17 format=3 uid="uid://ci8rlwsvwwqlr"]
 
 [ext_resource type="Script" uid="uid://iycjnte2pm11" path="res://main.gd" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://cqqnepvrcxkr5" path="res://things/loop/loop.tscn" id="1_ig7tw"]
@@ -9,6 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://wbl24b8xtihi" path="res://things/levels/level_5.tscn" id="7_272bh"]
 [ext_resource type="PackedScene" uid="uid://chiaq0kohso2q" path="res://things/levels/level_6.tscn" id="8_5vw27"]
 [ext_resource type="PackedScene" uid="uid://6afx4iavgpbj" path="res://things/levels/level_7.tscn" id="9_kek77"]
+[ext_resource type="PackedScene" uid="uid://cpp8s0udva8co" path="res://things/levels/level_8.tscn" id="10_4c57u"]
+[ext_resource type="PackedScene" uid="uid://3grpmb0lfq4j" path="res://things/levels/level_9.tscn" id="11_efxa6"]
+[ext_resource type="PackedScene" uid="uid://coryml6dwxqif" path="res://things/levels/level_last.tscn" id="12_dg77c"]
 
 [sub_resource type="Environment" id="Environment_ig7tw"]
 ambient_light_source = 2
@@ -18,7 +21,7 @@ ambient_light_energy = 0.5
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ig7tw"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_7dm0k"]
-size = Vector2(32, 32)
+size = Vector2(500, 32)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_h2yge"]
 size = Vector3(1.67993, 0.159912, 1.38965)
@@ -223,3 +226,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 125, 0, 0)
 
 [node name="Level7" parent="Levels" instance=ExtResource("9_kek77")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 150, 0, 0)
+
+[node name="Level8" parent="Levels" instance=ExtResource("10_4c57u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 175, 0, 0)
+
+[node name="Level9" parent="Levels" instance=ExtResource("11_efxa6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 200, 0, 0)
+
+[node name="LevelLast" parent="Levels" instance=ExtResource("12_dg77c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 225, 0, 0)

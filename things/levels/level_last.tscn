@@ -1,0 +1,182 @@
+[gd_scene load_steps=10 format=3 uid="uid://coryml6dwxqif"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h2yge"]
+size = Vector3(1.67993, 0.159912, 1.38965)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ln30a"]
+resource_local_to_scene = true
+cull_mode = 2
+albedo_color = Color(0.42, 0.26516, 0.0882, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_u4qv6"]
+size = Vector3(3, 0.1, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_yvnu2"]
+size = Vector3(0.2, 1, 0.2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yvnu2"]
+resource_local_to_scene = true
+cull_mode = 2
+albedo_color = Color(1, 0.815, 0.63, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_g4i6n"]
+size = Vector3(1, 0.1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hamy8"]
+resource_local_to_scene = true
+cull_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g4i6n"]
+resource_local_to_scene = true
+cull_mode = 2
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_hamy8"]
+size = Vector3(0.1, 0.1, 0.1)
+
+[node name="LevelLast" type="Node3D"]
+
+[node name="Loops" type="Node3D" parent="."]
+
+[node name="Tiles" type="Node3D" parent="."]
+
+[node name="Score" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -0.9, -6.5)
+visible = false
+pixel_size = 0.008
+text = "0"
+font_size = 128
+outline_size = 32
+
+[node name="Name" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -0.9, -3.04022)
+visible = false
+pixel_size = 0.008
+text = "LF"
+font_size = 128
+outline_size = 32
+
+[node name="ThankYou" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -0.9, -3.04022)
+pixel_size = 0.008
+text = "Thank you for playing
+Loop Stuff!"
+font_size = 128
+outline_size = 32
+
+[node name="TotalScore" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -0.9, 1.95978)
+pixel_size = 0.008
+text = "Score:"
+font_size = 128
+outline_size = 32
+
+[node name="TotalTime" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -0.9, 3.45978)
+pixel_size = 0.008
+text = "Time:"
+font_size = 128
+outline_size = 32
+
+[node name="Back" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -7, -0.9, 0)
+pixel_size = 0.01
+text = "«"
+font_size = 256
+outline_size = 32
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Back"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Back/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.318359)
+shape = SubResource("BoxShape3D_h2yge")
+
+[node name="Cake" type="Node3D" parent="."]
+
+[node name="MeshInstance3D13" type="MeshInstance3D" parent="Cake"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)
+material_override = SubResource("StandardMaterial3D_ln30a")
+mesh = SubResource("BoxMesh_u4qv6")
+
+[node name="MeshInstance3D14" type="MeshInstance3D" parent="Cake"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3, -0.45, 0.8)
+material_override = SubResource("StandardMaterial3D_ln30a")
+mesh = SubResource("BoxMesh_yvnu2")
+
+[node name="MeshInstance3D15" type="MeshInstance3D" parent="Cake"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3, -0.45, 0.8)
+material_override = SubResource("StandardMaterial3D_ln30a")
+mesh = SubResource("BoxMesh_yvnu2")
+
+[node name="MeshInstance3D16" type="MeshInstance3D" parent="Cake"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3, -0.45, -0.8)
+material_override = SubResource("StandardMaterial3D_ln30a")
+mesh = SubResource("BoxMesh_yvnu2")
+
+[node name="MeshInstance3D17" type="MeshInstance3D" parent="Cake"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3, -0.45, -0.8)
+material_override = SubResource("StandardMaterial3D_ln30a")
+mesh = SubResource("BoxMesh_yvnu2")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Cake"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+material_override = SubResource("StandardMaterial3D_yvnu2")
+mesh = SubResource("BoxMesh_g4i6n")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Cake"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 0)
+material_override = SubResource("StandardMaterial3D_yvnu2")
+mesh = SubResource("BoxMesh_g4i6n")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Cake"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+material_override = SubResource("StandardMaterial3D_hamy8")
+mesh = SubResource("BoxMesh_g4i6n")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Cake"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
+material_override = SubResource("StandardMaterial3D_yvnu2")
+mesh = SubResource("BoxMesh_g4i6n")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Cake"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
+material_override = SubResource("StandardMaterial3D_hamy8")
+mesh = SubResource("BoxMesh_g4i6n")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Cake"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.65, 0)
+material_override = SubResource("StandardMaterial3D_hamy8")
+mesh = SubResource("BoxMesh_g4i6n")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Cake"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 0.75, 0.3)
+material_override = SubResource("StandardMaterial3D_g4i6n")
+mesh = SubResource("BoxMesh_hamy8")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Cake"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, -0.3)
+material_override = SubResource("StandardMaterial3D_g4i6n")
+mesh = SubResource("BoxMesh_hamy8")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="Cake"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0.75, 0.3)
+material_override = SubResource("StandardMaterial3D_g4i6n")
+mesh = SubResource("BoxMesh_hamy8")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="Cake"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.75, -0.1)
+material_override = SubResource("StandardMaterial3D_g4i6n")
+mesh = SubResource("BoxMesh_hamy8")
+
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="Cake"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.49012e-08, 0.75, 1.49012e-08)
+material_override = SubResource("StandardMaterial3D_g4i6n")
+mesh = SubResource("BoxMesh_hamy8")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="Cake"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 0.75, -0.1)
+material_override = SubResource("StandardMaterial3D_g4i6n")
+mesh = SubResource("BoxMesh_hamy8")
