@@ -3,4 +3,4 @@
 [resource]
 resource_local_to_scene = true
 cull_mode = 2
-albedo_color = Color(0, 0, 0, 1)
+albedo_color = Color(0.5, 0.5, 0.5, 1)

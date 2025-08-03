@@ -165,3 +165,14 @@ func recolor():
 		LoopColor.PURPLE:
 			c = Color(.4, 0, .7)
 	corner_1.material_override.albedo_color = c;
+
+func get_points():
+	# TODO: this feels pretty terrible
+	var result = []
+	for x in range(min(round(x1), round(x2)), max(round(x1), round(x2)) + 1) :
+		result.push_back(Vector3(x, 0, z1))
+		result.push_back(Vector3(x, 0, z2))
+	for z in range(min(round(z1), round(z2)) + 1, max(round(z1), round(z2))):
+		result.push_back(Vector3(x1, 0, z))
+		result.push_back(Vector3(x2, 0, z))
+	return result

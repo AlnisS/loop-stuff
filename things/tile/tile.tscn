@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://cvnklfqi587f2"]
+
+[ext_resource type="Script" uid="uid://cwt2acgxv7rsp" path="res://things/tile/tile.gd" id="1_nqnk1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0xm2m"]
+albedo_color = Color(0.233925, 0.233926, 0.233925, 1)
+disable_receive_shadows = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ig7tw"]
+size = Vector2(1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0xm2m"]
+size = Vector3(1, 0.1, 1)
+
+[node name="Tile" type="Node3D"]
+script = ExtResource("1_nqnk1")
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.99, 0)
+material_override = SubResource("StandardMaterial3D_0xm2m")
+cast_shadow = 0
+mesh = SubResource("PlaneMesh_ig7tw")
+
+[node name="Zone" type="StaticBody3D" parent="." groups=["main"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="ZoneShape" type="CollisionShape3D" parent="Zone"]
+shape = SubResource("BoxShape3D_0xm2m")
