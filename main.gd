@@ -31,8 +31,9 @@ func _physics_process(delta):
 		time += delta
 		var minutes = floor(time / 60.0)
 		var seconds = time - (minutes * 60.0)
+		var bonus1 = "0" if minutes < 10 else ""
 		var bonus = "0" if seconds < 10 else ""
-		$Levels/LevelLast/TotalTime.text = "Time: " + str(int(minutes)) + ":" + bonus + "%00.3f" % seconds
+		$Levels/LevelLast/TotalTime.text = "Time: " + bonus1 + str(int(minutes)) + ":" + bonus + "%00.3f" % seconds
 	
 	var total_score = 0
 	for l in $Levels.get_children():
@@ -103,7 +104,7 @@ func _physics_process(delta):
 			next_button = node
 			break
 	
-	if remaining_tiles == 0 or true:
+	if remaining_tiles == 0:
 		if next_button:
 			next_button.show()
 		if Input.is_action_just_pressed("click"):
