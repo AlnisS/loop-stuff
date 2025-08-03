@@ -58,13 +58,9 @@ enum LoopColor {
 
 
 func _ready() -> void:
-	#pass
 	rebuild()
 	recolor()
 
-#func _process(_delta: float) -> void:
-	#rebuild()
-	#recolor()
 
 func rebuild():
 	if not is_inside_tree():
@@ -147,15 +143,15 @@ func recolor():
 		LoopColor.GRAY:
 			c = Color(0.5, 0.5, 0.5)
 		LoopColor.BLUE:
-			c = Color(0, 0, .7)
+			c = Color(0, 0, .6)
 		LoopColor.GREEN:
-			c = Color(0, .7, 0)
+			c = Color(0, .6, 0)
 		LoopColor.RED:
-			c = Color(.7, 0, 0)
+			c = Color(.6, 0, 0)
 		LoopColor.CYAN:
-			c = Color(0, .7, .7)
+			c = Color(0, .6, .6)
 		LoopColor.YELLOW:
-			c = Color(.7, .7, 0)
+			c = Color(.6, .6, 0)
 		LoopColor.MAGENTA:
 			c = Color(.7, 0, .7)
 		LoopColor.TURQUOISE:

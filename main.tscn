@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ci8rlwsvwwqlr"]
+[gd_scene load_steps=8 format=3 uid="uid://ci8rlwsvwwqlr"]
 
 [ext_resource type="Script" uid="uid://iycjnte2pm11" path="res://main.gd" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://cqqnepvrcxkr5" path="res://things/loop/loop.tscn" id="1_ig7tw"]
@@ -14,10 +14,16 @@ ambient_light_energy = 0.5
 [sub_resource type="PlaneMesh" id="PlaneMesh_7dm0k"]
 size = Vector2(32, 32)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_h2yge"]
+size = Vector3(1.67993, 0.159912, 1.38965)
+
 [node name="Main" type="Node3D" groups=["main"]]
 script = ExtResource("1_h2yge")
 
-[node name="Camera3D" type="Camera3D" parent="."]
+[node name="CameraBase" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="CameraBase"]
+unique_name_in_owner = true
 transform = Transform3D(0.707107, -0.664463, 0.241845, 0, 0.34202, 0.939693, -0.707107, -0.664463, 0.241845, 3, 10, 3)
 projection = 1
 size = 16.0
@@ -97,97 +103,257 @@ color = 6
 x1 = -3.0
 x2 = -4.0
 
-[node name="Level" type="Node3D" parent="."]
+[node name="Levels" type="Node3D" parent="."]
 
-[node name="Loops" type="Node3D" parent="Level"]
+[node name="Level1" type="Node3D" parent="Levels"]
 
-[node name="Tiles" type="Node3D" parent="Level"]
+[node name="Loops" type="Node3D" parent="Levels/Level1"]
 
-[node name="Tile1" parent="Level/Tiles" instance=ExtResource("2_0xm2m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -2)
+[node name="Tiles" type="Node3D" parent="Levels/Level1"]
 
-[node name="Tile2" parent="Level/Tiles" instance=ExtResource("2_0xm2m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -2)
-
-[node name="Tile3" parent="Level/Tiles" instance=ExtResource("2_0xm2m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
-
-[node name="Tile4" parent="Level/Tiles" instance=ExtResource("2_0xm2m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -2)
-
-[node name="Tile5" parent="Level/Tiles" instance=ExtResource("2_0xm2m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -2)
-
-[node name="Tile6" parent="Level/Tiles" instance=ExtResource("2_0xm2m")]
+[node name="Tile6" parent="Levels/Level1/Tiles" instance=ExtResource("2_0xm2m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -1)
 
-[node name="Tile7" parent="Level/Tiles" instance=ExtResource("2_0xm2m")]
+[node name="Tile7" parent="Levels/Level1/Tiles" instance=ExtResource("2_0xm2m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -1)
 
-[node name="Tile8" parent="Level/Tiles" instance=ExtResource("2_0xm2m")]
+[node name="Tile8" parent="Levels/Level1/Tiles" instance=ExtResource("2_0xm2m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
 
-[node name="Tile9" parent="Level/Tiles" instance=ExtResource("2_0xm2m")]
+[node name="Tile9" parent="Levels/Level1/Tiles" instance=ExtResource("2_0xm2m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1)
 
-[node name="Tile10" parent="Level/Tiles" instance=ExtResource("2_0xm2m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -1)
-
-[node name="Tile11" parent="Level/Tiles" instance=ExtResource("2_0xm2m")]
+[node name="Tile11" parent="Levels/Level1/Tiles" instance=ExtResource("2_0xm2m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
 
-[node name="Tile12" parent="Level/Tiles" instance=ExtResource("2_0xm2m")]
+[node name="Tile12" parent="Levels/Level1/Tiles" instance=ExtResource("2_0xm2m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
 
-[node name="Tile13" parent="Level/Tiles" instance=ExtResource("2_0xm2m")]
+[node name="Tile13" parent="Levels/Level1/Tiles" instance=ExtResource("2_0xm2m")]
 
-[node name="Tile14" parent="Level/Tiles" instance=ExtResource("2_0xm2m")]
+[node name="Tile14" parent="Levels/Level1/Tiles" instance=ExtResource("2_0xm2m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
 
-[node name="Tile15" parent="Level/Tiles" instance=ExtResource("2_0xm2m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
-
-[node name="Tile16" parent="Level/Tiles" instance=ExtResource("2_0xm2m")]
+[node name="Tile16" parent="Levels/Level1/Tiles" instance=ExtResource("2_0xm2m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 1)
 
-[node name="Tile17" parent="Level/Tiles" instance=ExtResource("2_0xm2m")]
+[node name="Tile17" parent="Levels/Level1/Tiles" instance=ExtResource("2_0xm2m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 1)
 
-[node name="Tile18" parent="Level/Tiles" instance=ExtResource("2_0xm2m")]
+[node name="Tile18" parent="Levels/Level1/Tiles" instance=ExtResource("2_0xm2m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
 
-[node name="Tile19" parent="Level/Tiles" instance=ExtResource("2_0xm2m")]
+[node name="Tile19" parent="Levels/Level1/Tiles" instance=ExtResource("2_0xm2m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
 
-[node name="Tile20" parent="Level/Tiles" instance=ExtResource("2_0xm2m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 1)
-
-[node name="Tile21" parent="Level/Tiles" instance=ExtResource("2_0xm2m")]
+[node name="Tile21" parent="Levels/Level1/Tiles" instance=ExtResource("2_0xm2m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 2)
 
-[node name="Tile22" parent="Level/Tiles" instance=ExtResource("2_0xm2m")]
+[node name="Tile22" parent="Levels/Level1/Tiles" instance=ExtResource("2_0xm2m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 2)
 
-[node name="Tile23" parent="Level/Tiles" instance=ExtResource("2_0xm2m")]
+[node name="Tile23" parent="Levels/Level1/Tiles" instance=ExtResource("2_0xm2m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
 
-[node name="Tile24" parent="Level/Tiles" instance=ExtResource("2_0xm2m")]
+[node name="Tile24" parent="Levels/Level1/Tiles" instance=ExtResource("2_0xm2m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 2)
 
-[node name="Tile25" parent="Level/Tiles" instance=ExtResource("2_0xm2m")]
+[node name="Tile31" parent="Levels/Level1/Tiles" instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 2)
+
+[node name="Tile32" parent="Levels/Level1/Tiles" instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 2)
+
+[node name="Tile33" parent="Levels/Level1/Tiles" instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="Tile34" parent="Levels/Level1/Tiles" instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 2)
+
+[node name="Score" type="Label3D" parent="Levels/Level1"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.5, -0.9, -2.5)
+pixel_size = 0.008
+text = "0"
+font_size = 128
+outline_size = 32
+
+[node name="Next" type="Label3D" parent="Levels/Level1"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 3, -0.9, 0)
+pixel_size = 0.01
+text = "»"
+font_size = 256
+outline_size = 32
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Levels/Level1/Next"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Level1/Next/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.318359)
+shape = SubResource("BoxShape3D_h2yge")
+
+[node name="Level2" type="Node3D" parent="Levels"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 0)
+
+[node name="Loops" type="Node3D" parent="Levels/Level2"]
+
+[node name="Tiles" type="Node3D" parent="Levels/Level2"]
+
+[node name="Tile1" parent="Levels/Level2/Tiles" instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -2)
+
+[node name="Tile2" parent="Levels/Level2/Tiles" instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -2)
+
+[node name="Tile3" parent="Levels/Level2/Tiles" instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+
+[node name="Tile4" parent="Levels/Level2/Tiles" instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -2)
+
+[node name="Tile5" parent="Levels/Level2/Tiles" instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -2)
+
+[node name="Tile6" parent="Levels/Level2/Tiles" instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -1)
+
+[node name="Tile7" parent="Levels/Level2/Tiles" instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -1)
+
+[node name="Tile8" parent="Levels/Level2/Tiles" instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+
+[node name="Tile9" parent="Levels/Level2/Tiles" instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1)
+
+[node name="Tile10" parent="Levels/Level2/Tiles" instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -1)
+
+[node name="Tile11" parent="Levels/Level2/Tiles" instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+
+[node name="Tile12" parent="Levels/Level2/Tiles" instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="Tile13" parent="Levels/Level2/Tiles" instance=ExtResource("2_0xm2m")]
+
+[node name="Tile14" parent="Levels/Level2/Tiles" instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="Tile15" parent="Levels/Level2/Tiles" instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+
+[node name="Tile16" parent="Levels/Level2/Tiles" instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 1)
+
+[node name="Tile17" parent="Levels/Level2/Tiles" instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 1)
+
+[node name="Tile18" parent="Levels/Level2/Tiles" instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+
+[node name="Tile19" parent="Levels/Level2/Tiles" instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
+
+[node name="Tile20" parent="Levels/Level2/Tiles" instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 1)
+
+[node name="Tile21" parent="Levels/Level2/Tiles" instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 2)
+
+[node name="Tile22" parent="Levels/Level2/Tiles" instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 2)
+
+[node name="Tile23" parent="Levels/Level2/Tiles" instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="Tile24" parent="Levels/Level2/Tiles" instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 2)
+
+[node name="Tile25" parent="Levels/Level2/Tiles" instance=ExtResource("2_0xm2m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
 
-[node name="Tile26" parent="Level/Tiles" instance=ExtResource("2_0xm2m")]
+[node name="Tile26" parent="Levels/Level2/Tiles" instance=ExtResource("2_0xm2m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 3)
 
-[node name="Tile27" parent="Level/Tiles" instance=ExtResource("2_0xm2m")]
+[node name="Tile27" parent="Levels/Level2/Tiles" instance=ExtResource("2_0xm2m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 3)
 
-[node name="Tile28" parent="Level/Tiles" instance=ExtResource("2_0xm2m")]
+[node name="Tile28" parent="Levels/Level2/Tiles" instance=ExtResource("2_0xm2m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
 
-[node name="Tile29" parent="Level/Tiles" instance=ExtResource("2_0xm2m")]
+[node name="Tile29" parent="Levels/Level2/Tiles" instance=ExtResource("2_0xm2m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 3)
 
-[node name="Tile30" parent="Level/Tiles" instance=ExtResource("2_0xm2m")]
+[node name="Tile30" parent="Levels/Level2/Tiles" instance=ExtResource("2_0xm2m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 3)
+
+[node name="Tile31" parent="Levels/Level2/Tiles" instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 2)
+
+[node name="Tile32" parent="Levels/Level2/Tiles" instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 2)
+
+[node name="Tile33" parent="Levels/Level2/Tiles" instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="Tile34" parent="Levels/Level2/Tiles" instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 2)
+
+[node name="Tile35" parent="Levels/Level2/Tiles" instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
+
+[node name="Tile36" parent="Levels/Level2/Tiles" instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 3)
+
+[node name="Tile37" parent="Levels/Level2/Tiles" instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 3)
+
+[node name="Tile38" parent="Levels/Level2/Tiles" instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+
+[node name="Tile39" parent="Levels/Level2/Tiles" instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 3)
+
+[node name="Tile40" parent="Levels/Level2/Tiles" instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 3)
+
+[node name="Score" type="Label3D" parent="Levels/Level2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -0.9, -3.5)
+pixel_size = 0.008
+text = "0"
+font_size = 128
+outline_size = 32
+
+[node name="Back" type="Label3D" parent="Levels/Level2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4, -0.9, 0)
+pixel_size = 0.01
+text = "«"
+font_size = 256
+outline_size = 32
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Levels/Level2/Back"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Level2/Back/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.318359)
+shape = SubResource("BoxShape3D_h2yge")
+
+[node name="Next" type="Label3D" parent="Levels/Level2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 4, -0.9, 0)
+pixel_size = 0.01
+text = "»"
+font_size = 256
+outline_size = 32
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Levels/Level2/Next"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Level2/Next/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.318359)
+shape = SubResource("BoxShape3D_h2yge")
