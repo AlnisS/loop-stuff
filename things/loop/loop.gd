@@ -36,6 +36,10 @@ enum LoopColor {
 		z2 = value
 		rebuild()
 
+@onready var node_1: Node3D = $Node1
+@onready var node_2: Node3D = $Node2
+@onready var node_3: Node3D = $Node3
+@onready var node_4: Node3D = $Node4
 
 @onready var corner_1: MeshInstance3D = %Corner1
 @onready var segment_1: MeshInstance3D = %Segment1
@@ -45,6 +49,13 @@ enum LoopColor {
 @onready var segment_3: MeshInstance3D = %Segment3
 @onready var corner_4: MeshInstance3D = %Corner4
 @onready var segment_4: MeshInstance3D = %Segment4
+
+@onready var point_1: MeshInstance3D = %Point1
+@onready var cap_1a: MeshInstance3D = %Cap1a
+@onready var cap_1b: MeshInstance3D = %Cap1b
+@onready var cap_2: MeshInstance3D = %Cap2
+@onready var cap_4: MeshInstance3D = %Cap4
+
 
 func _ready() -> void:
 	#pass
@@ -58,33 +69,75 @@ func _ready() -> void:
 func rebuild():
 	if not is_inside_tree():
 		return;
-	corner_1.position.x = x1
-	corner_1.position.z = z1
+	node_1.position = Vector3(x1, 0, z1)
 	
 	segment_1.position.x = x1
 	segment_1.position.z = (z2 + z1) / 2
-	segment_1.scale.x = (z2 - z1) - 1.0
+	segment_1.scale.x = abs(z2 - z1) - 1.0
 	
-	corner_2.position.x = x1
-	corner_2.position.z = z2
+	node_2.position = Vector3(x1, 0, z2)
 	
 	segment_2.position.z = z2
 	segment_2.position.x = (x2 + x1) / 2
-	segment_2.scale.x = (x2 - x1) - 1.0
+	segment_2.scale.x = abs(x2 - x1) - 1.0
 	
-	corner_3.position.x = x2
-	corner_3.position.z = z2
+	node_3.position = Vector3(x2, 0, z2)
 	
 	segment_3.position.x = x2
 	segment_3.position.z = (z2 + z1) / 2
-	segment_3.scale.x = (z2 - z1) - 1.0
+	segment_3.scale.x = abs(z2 - z1) - 1.0
 	
-	corner_4.position.x = x2
-	corner_4.position.z = z1
+	node_4.position = Vector3(x2, 0, z1)
 	
 	segment_4.position.z = z1
 	segment_4.position.x = (x2 + x1) / 2
-	segment_4.scale.x = (x2 - x1) - 1.0
+	segment_4.scale.x = abs(x2 - x1) - 1.0
+	
+
+	var x_flip = x2 < x1
+	var z_flip = z2 < z1
+	var s = Vector3(1, 1, 1)
+	if x_flip and z_flip:
+		s = Vector3(-1, 1, -1)
+	elif x_flip:
+		s = Vector3(-1, -1, 1)
+	elif z_flip:
+		s = Vector3(1, -1, -1)
+	node_1.scale = s
+	node_2.scale = s
+	node_3.scale = s
+	node_4.scale = s
+	
+	
+	for child in get_children():
+		child.hide()
+		for subchild in child.get_children():
+			subchild.hide()
+	node_1.show()
+	node_2.show()
+	node_3.show()
+	node_4.show()
+	var x_degen = abs(x2 - x1) < 0.1
+	var z_degen = abs(z2 - z1) < 0.1
+	if x_degen and z_degen:
+		point_1.show()
+	elif x_degen:
+		cap_1a.show()
+		segment_1.show()
+		cap_2.show()
+	elif z_degen:
+		cap_1b.show()
+		segment_4.show()
+		cap_4.show()
+	else:
+		corner_1.show()
+		segment_1.show()
+		corner_2.show()
+		segment_2.show()
+		corner_3.show()
+		segment_3.show()
+		corner_4.show()
+		segment_4.show()
 
 func recolor():
 	if not is_inside_tree():

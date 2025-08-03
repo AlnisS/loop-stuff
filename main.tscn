@@ -49,3 +49,39 @@ x1 = 0.0
 z1 = -1.0
 x2 = 1.0
 z2 = 1.0
+
+[node name="Loop4" parent="." instance=ExtResource("1_ig7tw")]
+color = 1
+z1 = 4.0
+x2 = 3.0
+z2 = 4.0
+
+[node name="Loop5" parent="." instance=ExtResource("1_ig7tw")]
+color = 2
+x1 = 4.0
+x2 = 4.0
+
+[node name="Loop6" parent="." instance=ExtResource("1_ig7tw")]
+color = 3
+x1 = 4.0
+z1 = 4.0
+x2 = 4.0
+z2 = 4.0
+
+[node name="Loop7" parent="." instance=ExtResource("1_ig7tw")]
+color = 4
+z1 = -4.0
+x2 = 3.0
+z2 = -5.0
+
+[node name="Loop8" parent="." instance=ExtResource("1_ig7tw")]
+color = 5
+x1 = -3.0
+z1 = -4.0
+x2 = -4.0
+z2 = -5.0
+
+[node name="Loop9" parent="." instance=ExtResource("1_ig7tw")]
+color = 6
+x1 = -3.0
+x2 = -4.0
