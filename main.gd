@@ -14,6 +14,8 @@ var hovered_button = null
 
 @onready var level = $Levels/Level1
 
+var done = false
+var time = 0.0
 
 
 const FOLLOW_SPEED = 4.0
@@ -25,6 +27,18 @@ func _process(delta):
 	$CameraBase.position = $CameraBase.position.lerp(target_pos, weight)
 
 func _physics_process(delta):
+	if !done:
+		time += delta
+		var minutes = floor(time / 60.0)
+		var seconds = time - (minutes * 60.0)
+		var bonus = "0" if seconds < 10 else ""
+		$Levels/LevelLast/TotalTime.text = "Time: " + str(int(minutes)) + ":" + bonus + "%00.3f" % seconds
+	
+	var total_score = 0
+	for l in $Levels.get_children():
+		total_score += int(l.get_node("Score").text)
+	$Levels/LevelLast/TotalScore.text = "Score: " + str(total_score)
+	
 	update_hovered_tile()
 	
 	if hovered_tile:
@@ -53,6 +67,7 @@ func _physics_process(delta):
 				advance_next_color()
 				dloop.position = Vector3.ZERO
 				dloop = null
+				$Smack.play()
 			else:
 				if is_equal_approx(dloop.x1, dloop.x2) and is_equal_approx(dloop.z1, dloop.z2):
 					remove_overlapping_loops()
@@ -100,6 +115,9 @@ func _physics_process(delta):
 				level = nl
 	else:
 		next_button.hide()
+	
+	if level.get_index() == level.get_parent().get_child_count() - 1:
+		done = true
 
 func is_dloop_valid() -> bool:
 	if abs(dloop.x1 - dloop.x2) < 0.9:
@@ -171,6 +189,7 @@ func update_hovered_tile():
 	var query = PhysicsRayQueryParameters3D.create(origin, end)
 
 	var result = space_state.intersect_ray(query)
+	var old_hovered_tile = hovered_tile
 	hovered_tile = null
 	hovered_button = null
 	if result:
@@ -178,6 +197,8 @@ func update_hovered_tile():
 		if collider.collision_layer & 1:
 			var tile: Node3D = collider.get_parent()
 			hovered_tile = tile
+			if hovered_tile != old_hovered_tile:
+				$Tick.play()
 		
 		if collider.collision_layer & 2:
 			var label: Label3D = collider.get_parent()

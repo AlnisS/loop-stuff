@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://cc7evnomtts6f"]
+
+[ext_resource type="ArrayMesh" uid="uid://daebk6prq5a27" path="res://things/loop/data/cap.obj" id="1_0bip3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5vd33"]
+resource_local_to_scene = true
+cull_mode = 2
+albedo_color = Color(0.286275, 0.572549, 0.290196, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0bip3"]
+resource_local_to_scene = true
+cull_mode = 2
+albedo_color = Color(0.57, 0.3705, 0.285, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_lupv7"]
+material = SubResource("StandardMaterial3D_0bip3")
+size = Vector3(0.2, 5, 0.2)
+
+[node name="Tree" type="Node3D"]
+
+[node name="Cap" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 4.5, 0)
+material_override = SubResource("StandardMaterial3D_5vd33")
+mesh = ExtResource("1_0bip3")
+
+[node name="Cap2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.31134e-07, -1, 0, 1, 1.31134e-07, 0, 0, 0, 1, 0, 3.5, 0)
+material_override = SubResource("StandardMaterial3D_5vd33")
+mesh = ExtResource("1_0bip3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+mesh = SubResource("BoxMesh_lupv7")

@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://c48mb2iuoxw4y"]
+
+[ext_resource type="ArrayMesh" uid="uid://bmp42pl58dygf" path="res://things/loop/data/point.obj" id="1_ryufy"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0bip3"]
+resource_local_to_scene = true
+cull_mode = 2
+albedo_color = Color(0.57, 0.3705, 0.285, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_lupv7"]
+material = SubResource("StandardMaterial3D_0bip3")
+size = Vector3(0.2, 2, 0.2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5vd33"]
+resource_local_to_scene = true
+cull_mode = 2
+albedo_color = Color(0.286275, 0.572549, 0.290196, 1)
+
+[node name="Shrub" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+mesh = SubResource("BoxMesh_lupv7")
+
+[node name="Point" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+material_override = SubResource("StandardMaterial3D_5vd33")
+mesh = ExtResource("1_ryufy")

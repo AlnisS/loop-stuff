@@ -61,7 +61,19 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -0.
 pixel_size = 0.008
 text = "Thank you for playing
 Loop Stuff!"
-font_size = 128
+font_size = 64
+outline_size = 32
+
+[node name="ThankYou2" type="Label3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 6, -0.9, -0.0402219)
+pixel_size = 0.008
+text = "Game created by
+Alnis Smidchens
+(alnis.dev)
+
+Made with Godot Engine
+(godotengine.org)"
+font_size = 64
 outline_size = 32
 
 [node name="TotalScore" type="Label3D" parent="."]
