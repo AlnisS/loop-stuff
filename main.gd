@@ -54,6 +54,8 @@ func _physics_process(delta):
 				dloop.position = Vector3.ZERO
 				dloop = null
 			else:
+				if is_equal_approx(dloop.x1, dloop.x2) and is_equal_approx(dloop.z1, dloop.z2):
+					remove_overlapping_loops()
 				dloop.queue_free()
 				dloop = null
 	
