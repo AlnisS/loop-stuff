@@ -77,6 +77,11 @@ func _physics_process(delta):
 		if hovered_button == "Back":
 			level = level.get_parent().get_child(level.get_index() - 1)
 	
+	if Input.is_action_just_pressed("ui_left"):
+		var idx = level.get_index() - 1
+		if idx >= 0:
+			level = level.get_parent().get_child(idx)
+	
 	var next_button = null
 	for node in level.get_children():
 		if node.name.begins_with("Next"):
@@ -84,10 +89,15 @@ func _physics_process(delta):
 			break
 	
 	if remaining_tiles == 0 or true:
-		next_button.show()
+		if next_button:
+			next_button.show()
 		if Input.is_action_just_pressed("click"):
 			if hovered_button == "Next":
 				level = level.get_parent().get_child(level.get_index() + 1)
+		elif Input.is_action_just_pressed("ui_right"):
+			var nl = level.get_parent().get_child(level.get_index() + 1)
+			if nl:
+				level = nl
 	else:
 		next_button.hide()
 
